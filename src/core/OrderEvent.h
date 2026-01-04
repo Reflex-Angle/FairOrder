@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Types.h"
+using namespace std;
 
 enum class Side : uint8_t {
     BUY,
@@ -15,7 +16,7 @@ enum class EventType : uint8_t {
 struct OrderEvent {
     EventType type;
     OrderID   order_id;
-    std::string instrument;
+    string    instrument;
     Side      side;
     Price     price;
     Qty       qty;
