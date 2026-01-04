@@ -1,0 +1,2 @@
+recv_time is the immutable timestamp captured for an order at ingress
+any 2 orders in the same batch have a maximum of window_ns difference in arrival
