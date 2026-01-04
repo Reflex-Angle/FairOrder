@@ -44,30 +44,26 @@ int main() {
     }
     */
 
-    cout << "=== MicroBatch Test ===\n";
+    std::cout << "=== Fair Priority Test ===\n";
 
-    MicroBatcher batcher(50'000); // 50 µs
+    MicroBatcher batcher(100'000); // 100 µs
     MatchingEngine engine;
 
-    // Submit events
-    for (int i = 0; i < 6; i++) {
-        OrderEvent ev;
-        ev.type = EventType::NEW;
-        ev.order_id = i + 1;
-        ev.instrument = "ABC";
-        ev.side = Side::BUY;
-        ev.price = 100;
-        ev.qty = 10;
-        ev.recv_time = now_ns();
+    // Same price, different IDs
+    {
+        OrderEvent a{EventType::NEW, 5, "ABC", Side::BUY, 100, 10, now_ns()};
+        OrderEvent b{EventType::NEW, 2, "ABC", Side::BUY, 100, 10, now_ns()};
+        OrderEvent c{EventType::NEW, 7, "ABC", Side::BUY, 101, 10, now_ns()};
 
-        batcher.submit(move(ev));
-        this_thread::sleep_for(chrono::microseconds(20));
+        batcher.submit(std::move(a));
+        batcher.submit(std::move(b));
+        batcher.submit(std::move(c));
+
     }
 
-    // 🔴 FORCE batch processing (this is the key)
+    // Force flush
     auto batch = batcher.pop_batch();
     engine.process_batch(batch);
 
-    cout << "Processed batch of size " << batch.size() << "\n";
 
 }
