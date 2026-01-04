@@ -22,7 +22,7 @@ The engine is designed to support empirical evaluation, including:
 ## Current Status
 - [x] Micro-batching layer
 - [x] Deterministic batching
-- [ ] Tie-breaking logic
+- [x] Tie-breaking logic (scope for scenario-specific advancement)
 - [ ] Order book and matching
 - [ ] Replay / audit logging
 
