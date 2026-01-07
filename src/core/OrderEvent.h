@@ -23,4 +23,5 @@ struct OrderEvent {
 
     TimeNs    recv_time;   // when engine received it
     BatchID   batch_id;    // assigned by MicroBatcher
+    int       trader_id;   // trader who submitted this order
 };

@@ -9,6 +9,10 @@ add_executable(engine
     src/main.cpp
     src/batching/MicroBatcher.cpp
     src/engine/MatchingEngine.cpp
+    src/book/OrderBook.cpp
+    src/simulation/Trader.cpp
+    src/metrics/FairnessMetrics.cpp
+    src/ui/CLI.cpp
 )
 
 target_include_directories(engine PRIVATE
