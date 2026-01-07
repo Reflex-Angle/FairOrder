@@ -39,7 +39,7 @@ The interactive CLI will start. Type `help` for available commands or `menu` for
 
 ```
 ┌──────────────┐
-│  CLI Layer  │  ← Interactive interface
+│  CLI Layer   │  ← Interactive interface
 └──────┬───────┘
        │
 ┌──────▼────────┐
