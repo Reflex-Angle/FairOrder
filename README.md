@@ -1,8 +1,9 @@
 # FairOrder: A Latency-Fair Stock Order Matching Engine
 
-## Overview
+## The Motivation
+Modern electronic markets often reward participants with microsecond-level advantages, encouraging an expensive and socially inefficient latency arms race. This project explores a latency-equalized exchange matching engine that intentionally reduces unfair timing advantages while preserving price discovery.
 
-**FairOrder** is an experimental exchange matching engine that demonstrates how **micro-batching** can reduce latency arbitrage in electronic markets. Unlike traditional price-time priority systems that reward microsecond-level speed advantages, FairOrder groups orders arriving within a small time window and processes them together, creating a more level playing field while preserving price discovery.
+The core idea is to introduce a fairness layer between order ingress and matching, ensuring that orders arriving within a small, controlled time window are treated equivalently rather than strictly by raw arrival time.
 
 ## Key Features
 
