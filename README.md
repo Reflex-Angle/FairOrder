@@ -108,7 +108,7 @@ The interactive CLI will start. Type `help` for available commands or `menu` for
 - [ ] Replay / audit logging
 - [ ] Web UI
 
-## Techn Stack
+## Tech Stack
 
 - **Language**: C++
 - **Build System**: CMake 3.16+
